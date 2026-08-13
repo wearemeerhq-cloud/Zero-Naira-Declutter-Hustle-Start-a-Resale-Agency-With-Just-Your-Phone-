@@ -23,7 +23,7 @@
             --text-muted: #a0aec0;
             --danger: #e53e3e;
             --white: #ffffff;
-            --black: #000000;
+            --success: #10b981;
         }
 
         * {
@@ -89,15 +89,8 @@
             margin-bottom: 10px;
         }
 
-        .hero-title-accent {
-            color: var(--accent-gold-light);
-        }
-
-        .hero-title-bottom {
-            font-family: 'Shadows Into Light', cursive;
-            font-size: 2.5rem;
-            display: block;
-        }
+        .hero-title-accent { color: var(--accent-gold-light); }
+        .hero-title-bottom { font-family: 'Shadows Into Light', cursive; font-size: 2.5rem; display: block; }
 
         .research-tag {
             font-size: 0.75rem;
@@ -107,31 +100,6 @@
             margin-top: 40px;
             display: block;
             opacity: 0.9;
-        }
-
-        /* Video Section */
-        .video-section {
-            background: linear-gradient(180deg, #0d1317 0%, #1a4d4e 100%);
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .video-container {
-            position: relative;
-            width: 100%;
-            max-width: 700px;
-            margin: 40px auto;
-            aspect-ratio: 16 / 9;
-            background: #000;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 4px solid var(--accent-gold);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
         }
 
         /* Price Scarcity Block */
@@ -170,15 +138,31 @@
 
         .cta-btn:hover { background: var(--accent-gold-light); transform: translateY(-2px); }
 
-        /* Sections */
+        /* Section Styling */
         section { padding: 80px 0; }
         .bg-darker { background-color: #080c0e; }
         .turning-point { font-size: 1.15rem; color: var(--text-muted); max-width: 650px; margin: 0 auto; text-align: center; }
         .turning-point h2 { color: var(--white); font-size: 2rem; margin-bottom: 20px; }
         .highlight { color: var(--accent-gold-light); font-weight: 700; }
 
-        /* Lead Form Modal */
-        #lead-modal {
+        /* Video Section */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 40px auto;
+            aspect-ratio: 16 / 9;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 4px solid var(--accent-gold);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        /* Modals */
+        .modal {
             display: none;
             position: fixed;
             z-index: 1000;
@@ -197,37 +181,22 @@
             max-width: 450px;
             border: 2px solid var(--accent-gold);
             position: relative;
+            text-align: center;
         }
 
-        .modal-content h3 { color: var(--accent-gold-light); font-size: 1.5rem; margin-bottom: 10px; text-align: center; }
-        .modal-content p { font-size: 0.9rem; text-align: center; margin-bottom: 25px; color: var(--text-muted); }
-
-        .form-group { margin-bottom: 20px; }
+        .close-modal { position: absolute; top: 15px; right: 20px; color: white; font-size: 24px; cursor: pointer; }
+        
+        .form-group { margin-bottom: 20px; text-align: left; }
         .form-group label { display: block; margin-bottom: 8px; font-size: 0.8rem; font-weight: 700; color: var(--accent-gold); }
         .form-group input {
-            width: 100%;
-            padding: 15px;
-            border-radius: 6px;
-            border: 1px solid #374151;
-            background: #1f2937;
-            color: white;
-            font-size: 1rem;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 15px; right: 20px;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
+            width: 100%; padding: 15px; border-radius: 6px; border: 1px solid #374151; background: #1f2937; color: white; font-size: 1rem;
         }
 
         .timer-box { background: var(--danger); color: white; padding: 10px; font-weight: 800; margin-top: 20px; border-radius: 4px; }
 
-        @media (max-width: 600px) {
-            .hero-title-main { font-size: 3.2rem; }
-            .cta-btn { font-size: 1rem; padding: 18px; }
-        }
+        footer { text-align: center; padding: 60px 0; background: var(--accent-teal); color: var(--accent-gold-light); font-family: 'Cinzel', serif; }
+
+        @media (max-width: 600px) { .hero-title-main { font-size: 3.2rem; } .cta-btn { font-size: 1rem; padding: 18px; } }
     </style>
 </head>
 <body>
@@ -244,7 +213,7 @@
             </h1>
             <span class="hero-title-bottom">Hustle</span>
 
-            <span class="research-tag">Developed using market insights from<br>small business researchers at OAU</span>
+            <span class="research-tag">Market insights from small business researchers at OAU</span>
 
             <div class="price-hero">
                 <span class="old-price">₦10,000</span>
@@ -262,119 +231,106 @@
     </header>
 
     <!-- VIDEO SECTION -->
-    <section class="video-section">
+    <section>
         <div class="container">
-            <h2 style="font-size: 2.2rem; margin-bottom: 10px;">Real Business. Real Simple.</h2>
-            <p class="turning-point" style="margin-bottom: 20px;">Watch how the Zero-Naira Hustle is managed right from a living room sofa.</p>
-            
+            <h2 style="text-align: center; margin-bottom: 20px;">Real Business. Real Simple.</h2>
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Declutter Hustle Demo" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demo" frameborder="0" allowfullscreen></iframe>
             </div>
-
-            <p style="margin-top: 20px; font-style: italic; color: var(--accent-gold-light);">"I facilitate sales daily from my couch with ₦0 capital."</p>
-            
-            <div style="margin-top: 40px;">
+            <div style="text-align: center; margin-top: 30px;">
                 <button class="cta-btn trigger-lead" style="max-width: 400px;">I WANT TO START TODAY</button>
             </div>
         </div>
     </section>
 
-    <!-- TURNING POINT -->
+    <!-- THE REVELATION -->
     <section class="bg-darker">
         <div class="container turning-point">
             <h2>The "Capital Myth" is keeping you broke.</h2>
-            <p>Most Nigerians wait for "capital" that never comes. Meanwhile, homes are filled with <span class="highlight">billions of Naira in unused items.</span> This playbook shows you how to bridge that gap using AI and your phone.</p>
-            
-            <div style="margin-top: 40px;">
-                <button class="cta-btn trigger-lead">I WANT THE PLAYBOOK (₦2,000)</button>
-            </div>
+            <p>Homes across Nigeria are filled with <span class="highlight">billions of Naira in unused items.</span> This playbook shows you how to bridge that gap using AI and your phone without ever buying stock yourself.</p>
         </div>
     </section>
 
     <!-- LEAD CAPTURE MODAL -->
-    <div id="lead-modal">
+    <div id="lead-modal" class="modal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h3>Secure Your Playbook</h3>
-            <p>Enter your details below to continue to the secure payment page (₦2,000).</p>
+            <span class="close-modal" id="close-lead">&times;</span>
+            <h3 style="color: var(--accent-gold-light); margin-bottom: 10px;">Secure Your Playbook</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 25px;">Enter your details to continue to the secure payment page (₦2,000).</p>
             
-            <!-- Replace the action below with a Formspree URL to actually save emails -->
-            <form id="purchase-form" action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
+            <form id="purchase-form">
                 <div class="form-group">
-                    <label for="full-name">FULL NAME</label>
-                    <input type="text" id="full-name" name="name" placeholder="Enter your full name" required>
+                    <label>FULL NAME</label>
+                    <input type="text" name="name" required placeholder="John Doe">
                 </div>
                 <div class="form-group">
-                    <label for="email">EMAIL ADDRESS</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your best email" required>
+                    <label>EMAIL ADDRESS</label>
+                    <input type="email" name="email" required placeholder="john@example.com">
                 </div>
-                
-                <button type="submit" class="cta-btn" style="font-size: 1rem; padding: 15px;">CONTINUE TO PAYMENT</button>
-                <p style="margin-top: 15px; font-size: 0.7rem;">Your payment receipt and download link will be sent to this email.</p>
+                <button type="submit" class="cta-btn" style="font-size: 1.1rem; padding: 18px;">PROCEED TO PAYMENT</button>
             </form>
         </div>
     </div>
 
-    <footer class="footer-authority">
+    <!-- SUCCESS MODAL -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content" style="border-color: var(--success);">
+            <span class="close-modal" id="close-success">&times;</span>
+            <div style="font-size: 50px; color: var(--success); margin-bottom: 15px;">✓</div>
+            <h3 style="color: var(--success); margin-bottom: 10px;">Purchase Completed</h3>
+            <p style="color: var(--text-white); font-size: 1rem; line-height: 1.5;">
+                Thank you for your purchase!<br>
+                <strong>The E-book has been sent to your email.</strong><br><br>
+                Please check your inbox (and spam folder) for the download link and your receipt.
+            </p>
+            <a href="https://drive.google.com/file/d/1hTIhv0wXPq__woQmiMvgUAmm9FgOEUiu/view?usp=drivesdk" target="_blank" class="cta-btn" style="margin-top: 25px; background: var(--success); font-size: 0.9rem; padding: 12px;">DOWNLOAD MANUALLY</a>
+        </div>
+    </div>
+
+    <footer>
         <div class="container">
             <p>NO CAPITAL NEEDED. NO DESIGN SKILL NEEDED.</p>
-            <p style="font-size: 0.7rem; margin-top: 10px; opacity: 0.7;">&copy; <span id="year"></span> Zero-Capital Series. All Rights Reserved.</p>
+            <p style="font-size: 0.7rem; margin-top: 10px; opacity: 0.7;">&copy; <span id="year"></span> Zero-Capital Series.</p>
         </div>
     </footer>
 
     <script>
-        const FLUTTERWAVE_LINK = "https://flutterwave.com/pay/2ecmoofvutn6";
+        const FLUTTERWAVE_LINK = "https://flutterwave.com/pay/zeronairadeclutterhustle";
 
-        // 1. MODAL LOGIC
-        const modal = document.getElementById("lead-modal");
-        const triggers = document.querySelectorAll(".trigger-lead");
-        const closeBtn = document.querySelector(".close-modal");
+        // 1. SUCCESS REDIRECT DETECTION
+        // To trigger this, redirect the user back to: yourpage.com/?status=success
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('status') === 'success') {
+            document.getElementById('success-modal').style.display = "flex";
+        }
 
-        triggers.forEach(btn => {
-            btn.onclick = () => modal.style.display = "flex";
+        // 2. MODAL LOGIC
+        const leadModal = document.getElementById("lead-modal");
+        const successModal = document.getElementById("success-modal");
+        
+        document.querySelectorAll(".trigger-lead").forEach(btn => {
+            btn.onclick = () => leadModal.style.display = "flex";
         });
 
-        closeBtn.onclick = () => modal.style.display = "none";
-        window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; };
+        document.getElementById("close-lead").onclick = () => leadModal.style.display = "none";
+        document.getElementById("close-success").onclick = () => successModal.style.display = "none";
 
-        // 2. FORM SUBMISSION & REDIRECT
-        const form = document.getElementById("purchase-form");
-        form.onsubmit = function(e) {
-            // If using Formspree, we allow the form to submit then redirect
-            // For now, we simulate the 'save' and redirect immediately
+        // 3. FORM SUBMISSION
+        document.getElementById("purchase-form").onsubmit = function(e) {
             e.preventDefault();
-            
-            // Here you could add logic to send data to your own sheet/database
-            console.log("Saving lead...");
-            
-            // Redirect to Flutterwave
+            // Redirect to updated Flutterwave link
             window.location.href = FLUTTERWAVE_LINK;
         };
 
-        // 3. COUNTDOWN TIMER
-        function getDeadline() {
-            let deadline = localStorage.getItem('hustle_deadline');
-            if (!deadline) {
-                deadline = new Date().getTime() + (7 * 24 * 60 * 60 * 1000);
-                localStorage.setItem('hustle_deadline', deadline);
-            }
-            return deadline;
-        }
-
+        // 4. COUNTDOWN TIMER
         function updateTimer() {
-            const now = new Date().getTime();
-            const t = getDeadline() - now;
-            if (t <= 0) {
-                document.getElementById('countdown').innerHTML = "OFFER EXPIRED";
-                return;
-            }
-            const days = Math.floor(t / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((t % (1000 * 60)) / 1000);
-            document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s REMAINING`;
+            let deadline = localStorage.getItem('hustle_deadline') || (new Date().getTime() + 604800000);
+            localStorage.setItem('hustle_deadline', deadline);
+            const t = deadline - new Date().getTime();
+            if (t <= 0) { document.getElementById('countdown').innerHTML = "OFFER EXPIRED"; return; }
+            const d = Math.floor(t / 86400000), h = Math.floor((t % 86400000) / 3600000), m = Math.floor((t % 3600000) / 60000), s = Math.floor((t % 60000) / 1000);
+            document.getElementById('countdown').innerHTML = `${d}d ${h}h ${m}m ${s}s REMAINING`;
         }
-
         setInterval(updateTimer, 1000);
         updateTimer();
         document.getElementById('year').textContent = new Date().getFullYear();
