@@ -110,12 +110,52 @@
         .comp-header { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; text-align: center; }
         .comp-list { list-style: none; padding: 0; margin: 0; }
         .comp-list li { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 1rem; display: flex; align-items: center; }
+        .comp-list li:last-child { border-bottom: none; }
         .comp-list li span { margin-right: 12px; font-size: 1.2rem; }
 
         /* LEARN GRID */
         .learn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 40px; }
         .learn-card { background: rgba(255,255,255,0.03); padding: 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
         .learn-card h3 { color: var(--accent-gold-light); font-size: 1.2rem; margin-bottom: 12px; }
+
+        /* TESTIMONIALS SECTION - NEW */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .testimonial-card {
+            background: var(--dark-card);
+            padding: 30px;
+            border-radius: 16px;
+            border-left: 4px solid var(--accent-gold);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .testimonial-card:hover { transform: translateY(-5px); }
+        .testimonial-card p {
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: var(--text-white);
+        }
+        .testimonial-meta {
+            display: flex;
+            flex-direction: column;
+        }
+        .testimonial-meta strong {
+            color: var(--accent-gold-light);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .testimonial-meta span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
 
         /* VALUE STACK SECTION */
         .value-stack-box {
@@ -161,11 +201,15 @@
         summary { padding: 22px; font-weight: 700; cursor: pointer; color: var(--accent-gold-light); list-style: none; display: flex; justify-content: space-between; }
         summary::after { content: '+'; }
         details[open] summary::after { content: '-'; }
+        .faq-content { padding: 0 22px 22px; color: var(--text-muted); font-size: 0.95rem; }
 
         /* MODALS */
         .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); backdrop-filter: blur(10px); align-items: center; justify-content: center; }
         .modal-content { background: var(--dark-card); padding: 40px; border-radius: 20px; width: 92%; max-width: 480px; border: 2px solid var(--accent-gold); text-align: center; position: relative; }
         .close-modal { position: absolute; top: 15px; right: 20px; color: var(--text-muted); font-size: 30px; cursor: pointer; }
+        .form-group { text-align: left; margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 0.8rem; font-weight: 800; color: var(--accent-gold); margin-bottom: 8px; text-transform: uppercase; }
+        .form-group input { width: 100%; padding: 16px; border-radius: 8px; border: 1px solid #374151; background: #1f2937; color: white; font-size: 1rem; outline: none; }
 
         @media (max-width: 768px) {
             .comparison-container { flex-direction: column; }
@@ -205,7 +249,11 @@
         <div class="container">
             <h2 class="handwritten">"I Started This By Mistake..."</h2>
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/A8O3a5Iu-oA" title="Success Story" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/A8O3a5Iu-oA" 
+                        title="Success Story" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -342,8 +390,39 @@
         </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- TESTIMONIALS SECTION -->
     <section class="bg-darker">
+        <div class="container">
+            <span class="eyebrow">HEAR FROM OTHERS</span>
+            <h2 class="handwritten">Join Hundreds of Students</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"I never knew I could make money from my phone without spending a kobo first. The scripts for reaching out to sellers are literal lifesavers! I facilitated my first generator sale in Lagos within 5 days."</p>
+                    <div class="testimonial-meta">
+                        <strong>Emeka A.</strong>
+                        <span>Undergraduate, UNILAG</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The 'Buyer Request Board' concept in the book is genius. I used it to find a buyer for a set of office chairs I found on my estate group. The commission was ₦15,000 for just connecting two people via WhatsApp!"</p>
+                    <div class="testimonial-meta">
+                        <strong>Titi O.</strong>
+                        <span>Civil Servant, Abuja</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"I was looking for a side hustle I could do after my 9-5. This book gave me the exact practical steps. No motivational talk, just a business model that works for the Nigerian market."</p>
+                    <div class="testimonial-meta">
+                        <strong>Dayo S.</strong>
+                        <span>Young Professional, Ibadan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
         <div class="container">
             <h2 class="handwritten">Common Questions</h2>
             <div class="faq-list">
@@ -355,7 +434,7 @@
     </section>
 
     <!-- FINAL OFFER -->
-    <section>
+    <section class="bg-darker">
         <div class="container" style="text-align: center;">
             <h2 class="handwritten">Stop Waiting for Capital. Start the Hustle.</h2>
             <div class="cta-urgency-block">
@@ -415,10 +494,10 @@
 
         // COUNTDOWN TIMER LOGIC
         function updateTimer() {
-            let deadline = localStorage.getItem('hustle_promo_v7');
+            let deadline = localStorage.getItem('hustle_promo_v11');
             if (!deadline) { 
                 deadline = new Date().getTime() + (7 * 24 * 60 * 60 * 1000); 
-                localStorage.setItem('hustle_promo_v7', deadline); 
+                localStorage.setItem('hustle_promo_v11', deadline); 
             }
             
             const t = deadline - new Date().getTime();
